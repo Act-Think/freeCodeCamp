@@ -1,0 +1,50 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var contacts = [
+            {
+                "fN": "Akira",
+                "lN": "Laine",
+                "num": "0212345678",
+                "Likes": ["Pizza", "Coding", "Brownie"]
+            },
+            {
+                "fN": "Harry",
+                "lN": "Potter",
+                "num": "0212341234",
+                "Likes": ["Hogwarts", "Magic", "Hagrid"]
+            }]
+
+        
+
+        function lookUpProfile(fName, prop) {
+            var result = " ";
+            for (var i = 0; i < contacts.length; i++) {
+                if (contacts[i]["fN"] === fName) {
+                    if(contacts[i][prop] === undefined) {
+                        result = "No such property."
+                    } else {
+                        result = contacts[i][prop]
+                    }
+                }
+                if (result === " ") {
+                    result = "No such name."
+                }
+            }
+            return result;
+        }
+
+        var data = lookUpProfile("Harry", "Likes");
+        document.write(data);
+    </script>
+
+</body>
+
+</html>
