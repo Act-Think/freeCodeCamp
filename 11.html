@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var members = {
+            "243": {
+                "name": "Pikachu",
+                "skill": "electric",
+                "color": [
+                    "yellow",
+                    "brown"
+                ]
+            },
+            "135": {
+                "name": "kkobugi",
+                "skill": "fire",
+                "color": [
+                    "blue",
+                    "skyblue"
+                ]
+            },
+            "357": {
+                "name": "metamon",
+                "skill": "general",
+            }
+        };
+
+        var membersCopy = JSON.parse(JSON.stringify(members));
+
+        function updateMembers(id, prop, value) {
+            if (value === "") {
+                delete members[id][prop];
+            } else if (prop === "color") {
+                members[id][prop] = members[id][prop] || [];
+                members[id][prop].push(value);
+            } else {
+                members[id][prop] = value;
+            }
+            return members;
+        }
+        updateMembers("135", "skill", "water");
+        console.log(updateMembers("357", "color", "purple"));
+
+
+    </script>
+</body>
+
+</html>

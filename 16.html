@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var contacts = [
+            {
+                "fN": "Joan",
+                "lN": "Rowling",
+                "num": "0212345678",
+                "Likes": ["Pizza", "Coding", "Brownie"]
+            },
+            {
+                "fN": "Harry",
+                "lN": "Potter",
+                "num": "0212341234",
+                "Likes": ["Hogwarts", "Magic", "Hagrid"]
+            }]
+
+        function lookup(name, prop) {
+            for (var i = 0; i < contacts.length; i++) {
+                if (contacts[i]["fN"] === name) {
+                    return contacts[i][prop] || "No such property";
+                }
+            }
+            return "No such name."
+        }
+        console.log(lookup("Joan", "Likes"));
+
+    </script>
+</body>
+
+</html>
